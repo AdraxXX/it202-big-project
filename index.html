@@ -1,11 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>IT 202 Big Project</title>
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>WoW Player Watch</title>
+  <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="main.css" rel="stylesheet">
 
-<body>
-</body>
+  </head>
+  <body>  
 
+<header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <span class="mdc-top-app-bar__title">WoW Player Watch</span>
+    </section>
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Home" id="home">home</button>
+    </section>
+  </div>
+</header>
+
+
+
+  <main class="mdc-top-app-bar--fixed-adjust">
+    <div class="view" id="homeScreen">
+        <div role="alertdialog" aria-modal="true" class="mdc-dialog mdc-dialog--open" data-is-opened="true" data-is-stacked="false" id="alertMessage">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <h2 class="mdc-dialog__title">Message</h2>
+                    <div class="mdc-dialog__content" id="alertText">
+                    </div>
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button mdc-ripple-upgraded" data-mdc-dialog-action="1" id="alertCloseButton">
+                            <span class="mdc-button__label">Close</span>
+                            <div class="mdc-button__ripple"></div>
+                        </button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+        <div class="col-50 margin-left-One_Fourth">
+            <label class="mdc-text-field mdc-text-field--filled mdc-text-field--fullwidth mdc-text-field--disabled">
+              <span class="mdc-text-field__ripple"></span>
+              <input class="mdc-text-field__input" type="text" placeholder="Region Name" aria-label="Full-Width Text Field" list="region" id="Region">
+              <datalist id="region">
+              </datalist>
+              <span class="mdc-line-ripple"></span>
+            </label>
+            <label class="mdc-text-field mdc-text-field--filled mdc-text-field--fullwidth mdc-text-field--disabled">
+              <span class="mdc-text-field__ripple"></span>
+              <input class="mdc-text-field__input" type="text" placeholder="Realm Name" aria-label="Full-Width Text Field" list="realms" id="Realm">
+              <datalist id="realms">
+              </datalist>
+              <span class="mdc-line-ripple"></span>
+            </label>
+            <label class="mdc-text-field mdc-text-field--filled mdc-text-field--fullwidth mdc-text-field--disabled">
+              <span class="mdc-text-field__ripple"></span>
+              <input class="mdc-text-field__input" type="text" placeholder="Player Name" aria-label="Full-Width Text Field" list="playerName" id="Player">
+              <datalist id="playerName">
+              </datalist>
+              <span class="mdc-line-ripple"></span>
+            </label> 
+            <br>
+            <button class="mdc-button foo-button mdc-button--raised col-50 margin-left-One_Fourth" id="playerSearch" disabled="true">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Look Up Player</span>
+            </button>
+        </div>
+        <h2 class="col-100" >Top 100 Guilds Nyalotha</h2>
+        <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller" id="keystoneList">
+                <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                    <div class="mdc-tab-scroller__scroll-content" style="transform: none;" id="raidList">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+<!--         <div class="mdc-tab-scroller"><div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;"><div class="mdc-tab-scroller__scroll-content" style="transform: none;" id="raidList"><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-10"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab One</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:68px; --mdc-ripple-fg-scale:1.96057; --mdc-ripple-fg-translate-start:-14px, -4.4375px; --mdc-ripple-fg-translate-end:22.7969px, -10px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-11"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Two</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:69px; --mdc-ripple-fg-scale:1.97312; --mdc-ripple-fg-translate-start:57.9063px, -4.9375px; --mdc-ripple-fg-translate-end:23.8281px, -10.5px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-12"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Three</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:78px; --mdc-ripple-fg-scale:1.92385; --mdc-ripple-fg-translate-start:9.75px, -3.4375px; --mdc-ripple-fg-translate-end:26.7891px, -15px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-13"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Four</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:73px; --mdc-ripple-fg-scale:1.93969; --mdc-ripple-fg-translate-start:3.67188px, 1.0625px; --mdc-ripple-fg-translate-end:24.7656px, -12.5px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-14"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Five</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:69px; --mdc-ripple-fg-scale:1.96349; --mdc-ripple-fg-translate-start:-23.8594px, -5.9375px; --mdc-ripple-fg-translate-end:23.4688px, -10.5px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-15"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Six</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:64px; --mdc-ripple-fg-scale:1.99511; --mdc-ripple-fg-translate-start:-11.2969px, -3.4375px; --mdc-ripple-fg-translate-end:21.7266px, -8px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-16"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Seven</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:79px; --mdc-ripple-fg-scale:1.90265; --mdc-ripple-fg-translate-start:-18.25px, -10.9375px; --mdc-ripple-fg-translate-end:26.4219px, -15.5px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-17"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Eight</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:76px; --mdc-ripple-fg-scale:1.93301; --mdc-ripple-fg-translate-start:-11.5938px, -1.4375px; --mdc-ripple-fg-translate-end:26.1094px, -14px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-18"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Nine</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:71px; --mdc-ripple-fg-scale:1.94893; --mdc-ripple-fg-translate-start:61.6875px, -8.9375px; --mdc-ripple-fg-translate-end:24.0313px, -11.5px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-19"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Ten</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:67px; --mdc-ripple-fg-scale:1.97374; --mdc-ripple-fg-translate-start:-7.375px, 3.0625px; --mdc-ripple-fg-translate-end:22.7109px, -9.5px;"></span></button><button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-20"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Eleven</span></span><span class="mdc-tab-indicator mdc-tab-indicator--active"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:84px; --mdc-ripple-fg-scale:1.88254; --mdc-ripple-fg-translate-start:-1.29688px, -7.4375px; --mdc-ripple-fg-translate-end:28.0703px, -18px;"></span></button><button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1" id="mdc-tab-21"><span class="mdc-tab__content"><span class="mdc-tab__text-label">Tab Twelve</span></span><span class="mdc-tab-indicator"><span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline" style=""></span></span><span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:85px; --mdc-ripple-fg-scale:1.87883; --mdc-ripple-fg-translate-start:86.5625px, 0.71875px; --mdc-ripple-fg-translate-end:28.3984px, -18.5px;"></span></button></div></div></div>
+ -->    <div class="col-100 overflow-y-scroll leaderBoard hideScrollbar">
+            <div id="raidLeaderBoard">
+            </div>
+        </div>
+        <h2 class="col-100" >Top Ranked Keystones</h2>
+        <div class="mdc-tab-bar" role="tablist">
+            <div class="mdc-tab-scroller" id="keystoneList">
+                <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                    <div class="mdc-tab-scroller__scroll-content" style="transform: none;" id="dungonsList">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-100 overflow-y-scroll leaderBoard hideScrollbar">
+            <div id="keystoneLeaderBoard">
+            </div>
+        </div>
+     </div>
+     <div class="view" id="characterScreen">
+         <div id="characterGear">
+             <div class="gearList" id="gearListLeft">
+                 <img class="mdc-image-list__image gearImage" id="HeadSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="NeckSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="ShouldersSlot"src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="BackSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="ChestSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="ShirtSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="TabardSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="WristSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+             </div>
+             <div id="characterPicture">
+                 <img class="mdc-image-list__image characterImage" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image weaponImage" id="MainHandSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image weaponImage" id="OffHandSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+             </div>
+             <div class="gearList" id="gearListRight">
+                 <img class="mdc-image-list__image gearImage" id="HandsSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="WaistSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="LegsSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="FeetSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="Ring1Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="Ring2Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="Trinket1Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+                 <img class="mdc-image-list__image gearImage" id="Trinket2Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
+             </div>
+         </div>
+        <div class="mdc-tab-bar" id="charts" role="tablist">
+            <div class="mdc-tab-scroller">
+                <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                    <div class="mdc-tab-scroller__scroll-content">
+                    <!---->
+                    <button role="tab" class="mdc-tab mdc-tab--active" aria-selected="true" tabindex="0" id="goog_1995475608-FIXED-0">
+                        <span class="mdc-tab__content">
+                            <i aria-hidden="true" class="material-icons mdc-tab__icon"><!---->watch_later<!----></i>
+                            <span class="mdc-tab__text-label">Raiding Progression</span>
+                        </span>
+                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content
+                            mdc-tab-indicator__content--underline" style=""></span>
+                        </span>
+                        <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:91px; --mdc-ripple-fg-scale:1.8648; --mdc-ripple-fg-translate-start:17.5px, -5.5px; --mdc-ripple-fg-translate-end:30.6563px, -21.5px;"></span>
+                    </button>
+                    <!---->
+                    <button role="tab" class="mdc-tab" aria-selected="false" tabindex="-1" id="goog_1995475608-FIXED-1">
+                        <span class="mdc-tab__content">
+                            <i aria-hidden="true" class="material-icons mdc-tab__icon"><!---->near_me<!----></i>
+                            <span class="mdc-tab__text-label">Keystone Progression</span>
+                        </span>
+                        <span class="mdc-tab-indicator">
+                            <span class="mdc-tab-indicator__content
+                            mdc-tab-indicator__content--underline" style=""></span>
+                        </span>
+                        <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:93px; --mdc-ripple-fg-scale:1.85613; --mdc-ripple-fg-translate-start:46.6875px, -22.5px; --mdc-ripple-fg-translate-end:31.1875px, -22.5px;"></span>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-45 float-Left">
+            <br><br>
+            <h2>Current Expansion Raiding Progression</h2>
+            <div class="mdc-card col-100 margin-bottom-half">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <!-- content within actionable area -->
+              </div>
+              <div class="mdc-card__actions">
+                  <button class="mdc-icon-button mdc-card__action mdc-card__action--icon"
+                     aria-pressed="false"
+                     aria-label="Add to favorites"
+                     title="Add to favorites">
+                   <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                   <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                  </button>
+                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+              </div>
+            </div>
+         </div>
+        <div class="col-45 float-Left margin-left-tenth">
+            <br><br>
+            <h2>Current Season Mythic Keystone Progression</h2>
+            <div class="mdc-card col-100 margin-bottom-half">
+              <div class="mdc-card__primary-action" tabindex="0">
+                <!-- content within actionable area -->
+              </div>
+              <div class="mdc-card__actions">
+                  <button class="mdc-icon-button mdc-card__action mdc-card__action--icon"
+                     aria-pressed="false"
+                     aria-label="Add to favorites"
+                     title="Add to favorites">
+                   <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                   <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                  </button>
+                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+              </div>
+            </div>
+         </div>
+     </div>
+  </main>
+  </body>
+    <script> 
+        let token = "&access_token=USRJEWBOlqBjwHPPeiGQ1V7ZcKIq7sWRZ4"; 
+        let raidLeaderBoard = document.querySelector("#raidLeaderBoard");
+    </script>
+    <script src="js/searchBars.js"></script>
+    <script src="js/loadPlayer.js"></script>
+    <script src="js/keystoneLeaderBoard.js"></script>
+    <script src="js/raidLeaderBoard.js"></script>
+    <script>
+        let include = (file)=> 
+        { 
+          var script  = document.createElement('script'); 
+          script.src  = file; 
+          script.type = 'text/javascript'; 
+          script.defer = true; 
+
+          document.querySelector('html').appendChild(script); 
+
+        } 
+        
+        for(let buttons of document.querySelectorAll('.foo-button'))    
+            mdc.ripple.MDCRipple.attachTo(buttons);
+        
+        mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('header.mdc-top-app-bar'));
+        
+        for(let tabBars of document.querySelectorAll('.mdc-tab-scroller'))    
+            mdc.tabScroller.MDCTabScroller.attachTo(tabBars);
+        
+        document.querySelector('#alertCloseButton').addEventListener('click', ()=>
+        {
+            document.querySelector("#alertMessage").style.display = "none";
+        });
+        
+        let checkRealmInfoExist = setInterval(()=>
+        {
+           if (RealmInfo.length >= 119) {
+              clearInterval(checkRealmInfoExist);
+              createKeystoneLeaderboards();
+           }
+        }, 1000);
+        
+        for(let screenButtons of document.querySelectorAll('.mdc-top-app-bar .mdc-top-app-bar__action-item'))
+        {
+            screenButtons.addEventListener('click', (e)=>
+            {
+                for(let viewScreen of document.querySelector('main').querySelectorAll('.view'))
+                {
+                    if(viewScreen.id == screenButtons.id + "Screen")
+                        viewScreen.style.display = "block";
+                    else
+                        viewScreen.style.display = "none";
+                }
+            });
+        }
+    </script>
 </html>

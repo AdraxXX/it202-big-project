@@ -1,0 +1,174 @@
+
+:root {
+  --mdc-theme-primary: #08aa95;
+}
+
+body {margin: 0;}
+main {margin-left: 8px;}
+.view
+{
+  display: none;
+}
+  .leaderBoard
+  {
+      height: 200px;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+.mdc-tab{
+    font-size: .7em !important;
+}
+/* Hide scrollbar for IE and Edge */
+.hideScrollbar {
+  -ms-overflow-style: none;
+}
+#homeScreen
+  {
+      display: block;
+  }
+ #characterScreen
+  {
+      display: none;
+  }
+  .overflow-y-scroll
+  {
+      overflow-y: scroll;
+  }
+  .float-Left
+  {
+      float: left;
+  }
+
+  .float-Right
+  {
+      float: right;
+  }
+
+  .float-None
+  {
+      float: none;
+  }
+
+  .col-45
+  {
+      width: 45% !important;
+  }
+
+  .margin-left-tenth
+  {
+      margin-left: 10%;
+  }
+
+  .col-50
+  {
+      width: 50% !important;
+  }
+
+  .margin-left-One_Fourth
+  {
+     margin-left: 25%; 
+  }
+
+  .fation-Text
+  {
+      font-size: 2em;
+  }
+
+  .info-Text
+  {
+      font-size: 1.5em;
+      tab-size: 2 !important;
+  }
+  .col-100
+  {
+      width: 100% !important;
+  }
+
+  .margin-bottom-half
+  {
+     margin-bottom: .5em;
+  }
+
+  #alertMessage
+  {
+      display: none;
+  }
+
+  .gearImage
+  {
+      width: 3em;
+      height: 3em;
+      margin-bottom: .5em;
+  }
+
+  .gearList
+  {
+      width: 3em;
+      float: left;
+  }
+
+  .characterImage
+  {
+      width: 100%;
+      height: auto;
+  }
+
+  #characterPicture
+  {
+      float: left;
+      margin-top: -1.5em;
+      margin-right: -7em;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: auto;
+  }
+
+  .weaponImage
+  {
+      width: 3em;
+      height: 3em;
+      position: relative;
+      margin-left: 10em;
+      top: -5em;
+  }
+
+  .weaponImage:nth-child(2)
+  {
+      margin-left: 30%;
+  }
+
+  #characterGear
+  {
+      position: relative;
+      top: 2em;
+      width: 700px;
+      height: auto;
+      left: 0;
+  }
+  #gearListLeft
+  {
+      float: left;
+      margin-left: 1em;
+  }
+  #gearListRight
+  {
+      float: right;
+      margin-right: 1em;
+  }
+  #charts
+  {
+      width: 50%;
+      position: absolute;
+      right: 0;
+  }
+  .cardImage
+  {
+      width: 150px;
+      height: 85px;
+      background-repeat: no-repeat !important;
+      background-size: contain !important;
+  }
