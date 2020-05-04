@@ -6,6 +6,8 @@
     <title>WoW Player Watch</title>
   <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
   <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="main.css" rel="stylesheet">
 
@@ -104,103 +106,21 @@
         </div>
      </div>
      <div class="view" id="characterScreen">
-         <div id="characterGear">
-             <div class="gearList" id="gearListLeft">
-                 <img class="mdc-image-list__image gearImage" id="HeadSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="NeckSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="ShouldersSlot"src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="BackSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="ChestSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="ShirtSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="TabardSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="WristSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-             </div>
-             <div id="characterPicture">
-                 <img class="mdc-image-list__image characterImage" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image weaponImage" id="MainHandSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image weaponImage" id="OffHandSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-             </div>
-             <div class="gearList" id="gearListRight">
-                 <img class="mdc-image-list__image gearImage" id="HandsSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="WaistSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="LegsSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="FeetSlot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="Ring1Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="Ring2Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="Trinket1Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-                 <img class="mdc-image-list__image gearImage" id="Trinket2Slot" src="https://render-us.worldofwarcraft.com/icons/56/inv_helm_leatherraidnzoth_d_01.jpg">
-             </div>
-         </div>
-        <div class="mdc-tab-bar" id="charts" role="tablist">
-            <div class="mdc-tab-scroller">
-                <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-                    <div class="mdc-tab-scroller__scroll-content">
-                    <!---->
-                    <button role="tab" class="mdc-tab mdc-tab--active" aria-selected="true" tabindex="0" id="goog_1995475608-FIXED-0">
-                        <span class="mdc-tab__content">
-                            <i aria-hidden="true" class="material-icons mdc-tab__icon"><!---->watch_later<!----></i>
-                            <span class="mdc-tab__text-label">Raiding Progression</span>
-                        </span>
-                        <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content
-                            mdc-tab-indicator__content--underline" style=""></span>
-                        </span>
-                        <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:91px; --mdc-ripple-fg-scale:1.8648; --mdc-ripple-fg-translate-start:17.5px, -5.5px; --mdc-ripple-fg-translate-end:30.6563px, -21.5px;"></span>
-                    </button>
-                    <!---->
-                    <button role="tab" class="mdc-tab" aria-selected="false" tabindex="-1" id="goog_1995475608-FIXED-1">
-                        <span class="mdc-tab__content">
-                            <i aria-hidden="true" class="material-icons mdc-tab__icon"><!---->near_me<!----></i>
-                            <span class="mdc-tab__text-label">Keystone Progression</span>
-                        </span>
-                        <span class="mdc-tab-indicator">
-                            <span class="mdc-tab-indicator__content
-                            mdc-tab-indicator__content--underline" style=""></span>
-                        </span>
-                        <span class="mdc-tab__ripple mdc-ripple-upgraded" style="--mdc-ripple-fg-size:93px; --mdc-ripple-fg-scale:1.85613; --mdc-ripple-fg-translate-start:46.6875px, -22.5px; --mdc-ripple-fg-translate-end:31.1875px, -22.5px;"></span>
-                    </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-45 float-Left">
+        <div id="raid_chart"></div>
+        <div class="col-100 float-none">
             <br><br>
             <h2>Current Expansion Raiding Progression</h2>
-            <div class="mdc-card col-100 margin-bottom-half">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <!-- content within actionable area -->
-              </div>
-              <div class="mdc-card__actions">
-                  <button class="mdc-icon-button mdc-card__action mdc-card__action--icon"
-                     aria-pressed="false"
-                     aria-label="Add to favorites"
-                     title="Add to favorites">
-                   <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                   <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-              </div>
+            <div class="col-100 overflow-y-scroll playerBoard hideScrollbar">
+                <div id="playerraidboard">
+                </div>
             </div>
          </div>
-        <div class="col-45 float-Left margin-left-tenth">
+        <div class="col-100 float-none">
             <br><br>
             <h2>Current Season Mythic Keystone Progression</h2>
-            <div class="mdc-card col-100 margin-bottom-half">
-              <div class="mdc-card__primary-action" tabindex="0">
-                <!-- content within actionable area -->
-              </div>
-              <div class="mdc-card__actions">
-                  <button class="mdc-icon-button mdc-card__action mdc-card__action--icon"
-                     aria-pressed="false"
-                     aria-label="Add to favorites"
-                     title="Add to favorites">
-                   <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                   <i class="material-icons mdc-icon-button__icon">favorite_border</i>
-                  </button>
-                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-                  <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-              </div>
+            <div class="col-100 overflow-y-scroll playerBoard hideScrollbar">
+                <div id="playerKeystoneboard">
+                </div>
             </div>
          </div>
      </div>
@@ -261,4 +181,5 @@
             });
         }
     </script>
+    <script src="js/app.js"></script>
 </html>
